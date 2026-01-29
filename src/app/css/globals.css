@@ -232,3 +232,117 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 input[type="time"] {
   -moz-appearance: textfield;
 }
+
+/* Landing page animations */
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+@keyframes slideInUp {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-120%);
+    opacity: 0;
+    filter: blur(8px);
+  }
+  60% {
+    opacity: 1;
+    filter: blur(0px);
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+    filter: blur(0px);
+  }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animate-slideInUp {
+  animation: slideInUp 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.animate-slideInFromLeft {
+  animation: slideInFromLeft 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.hover-img {
+  transition: transform 400ms ease, box-shadow 400ms ease;
+}
+
+.hover-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Stack Carousel Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-20px) scale(1.1);
+    opacity: 1;
+  }
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes cardStackIn {
+  0% {
+    transform: translateY(100px) scale(0.8) rotateY(-15deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) scale(1) rotateY(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes cardStackOut {
+  0% {
+    transform: translateY(0) scale(1) rotateY(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) scale(0.8) rotateY(15deg);
+    opacity: 0;
+  }
+}

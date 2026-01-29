@@ -10,8 +10,21 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
 import { Icon } from "@iconify/react";
+import { useAuth } from "@/app/hooks/useAuth";
+import { useEffect, useState } from "react";
 
 const Profile = () => {
+  const { logout, getUserEmail } = useAuth();
+  const [userEmail, setUserEmail] = useState<string | null>(null);
+
+  useEffect(() => {
+    setUserEmail(getUserEmail());
+  }, []);
+
+  const handleLogout = () => {
+    logout();
+  };
+
   return (
     <div className="relative group/menu">
       <DropdownMenu>
@@ -29,8 +42,18 @@ const Profile = () => {
 
         <DropdownMenuContent
           align="end"
-          className="w-44 rounded-sm shadow-md p-2"
+          className="w-56 rounded-sm shadow-md p-2"
         >
+          {/* User Email Display */}
+          {userEmail && (
+            <div className="px-3 py-2 border-b mb-2">
+              <p className="text-xs text-gray-500">Signed in as</p>
+              <p className="text-sm font-medium text-gray-900 dark:text-white truncate">
+                {userEmail}
+              </p>
+            </div>
+          )}
+
           <DropdownMenuItem asChild>
             <Link
               href="/user-profile"
@@ -43,12 +66,13 @@ const Profile = () => {
 
           <div className="p-3 pt-0">
             <Button
-              asChild
+              onClick={handleLogout}
               variant="outline"
               size="sm"
-              className="mt-2 w-full"
+              className="mt-2 w-full hover:bg-destructive hover:text-white"
             >
-              <Link href="/auth/login">Logout</Link>
+              <Icon icon="solar:logout-2-outline" height={18} className="mr-2" />
+              Logout
             </Button>
           </div>
         </DropdownMenuContent>
