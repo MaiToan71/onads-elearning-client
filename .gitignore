@@ -20,6 +20,13 @@
 .DS_Store
 *.pem
 
+# archive files
+*.tar
+*.tar.gz
+*.tgz
+*.zip
+*.rar
+
 # debug
 npm-debug.log*
 yarn-debug.log*

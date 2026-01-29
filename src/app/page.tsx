@@ -3,6 +3,83 @@ import { Button } from '@/components/ui/button'
 import { Zap, Globe } from 'lucide-react'
 import { UserMenu } from '@/app/components/landing/UserMenu'
 import { PlatformCarousel } from '@/app/components/landing/PlatformCarousel'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'OnAds - AI-Powered Advertising Platform | Run Ads on All Major Platforms Starting $2',
+  description: 'Transform your business with OnAds AI advertising platform. Run high-performing ads on Google, Meta, Instagram, Bing & Snapchat without agencies. Start at just $2/month with AI-powered optimization, smart targeting, and real-time analytics.',
+  keywords: [
+    'AI advertising platform',
+    'Meta ads automation',
+    'Google ads AI',
+    'Instagram advertising',
+    'Bing ads platform',
+    'Snapchat ads',
+    'advertising automation',
+    'AI ad creation',
+    'marketing automation',
+    'digital advertising platform',
+    'ad campaign management',
+    'social media advertising',
+    'PPC automation',
+    'ad optimization AI',
+    'affordable advertising platform'
+  ],
+  authors: [{ name: 'OnAds Team' }],
+  creator: 'OnAds',
+  publisher: 'OnAds',
+  applicationName: 'OnAds Platform',
+  
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://onads.io',
+    siteName: 'OnAds - AI-Powered Advertising Platform',
+    title: 'OnAds - Run High-Performing Ads on All Platforms Starting $2',
+    description: 'AI-powered advertising platform for Google, Meta, Instagram, Bing & Snapchat. Automate your ad campaigns with AI optimization, smart targeting, and real-time analytics. No agency fees.',
+    images: [
+      {
+        url: '/images/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'OnAds AI Advertising Platform',
+      }
+    ],
+  },
+  
+  twitter: {
+    card: 'summary_large_image',
+    site: '@onads',
+    creator: '@onads',
+    title: 'OnAds - AI-Powered Advertising Platform | Starting $2',
+    description: 'Run high-performing ads on Google, Meta, Instagram, Bing & Snapchat with AI automation. Start at $2/month. No agency fees.',
+    images: ['/images/twitter-card.png'],
+  },
+  
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  
+  alternates: {
+    canonical: 'https://onads.io',
+  },
+  
+  category: 'technology',
+  
+  other: {
+    'google-site-verification': 'your-google-verification-code',
+    'msapplication-TileColor': '#7c3aed',
+    'theme-color': '#7c3aed',
+  },
+}
 
 export default function LandingPage() {
   return (
